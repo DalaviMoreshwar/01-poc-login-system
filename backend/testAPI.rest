@@ -1,0 +1,13 @@
+GET http://localhost:3006/users
+
+###
+POST http://localhost:3069/login HTTP/1.1
+content-type: application/json
+
+{
+    "username":"john","password":"password123"
+}
+
+###
+POST http://localhost:3069/logout HTTP/1.1
+content-type: application/json
