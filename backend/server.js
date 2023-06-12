@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 
 // Simulated database
 const db = {
@@ -22,12 +23,13 @@ const db = {
 
 const app = express();
 app.use(express.json());
+app.use(cors({ credentials: true }));
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3069");
-  res.header("Access-Control-Allow-Headers", "*");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "http://localhost:8085");
+//   res.header("Access-Control-Allow-Headers", "*");
+//   next();
+// });
 
 const SECRET_KEY = "your-secret-key";
 
@@ -96,6 +98,6 @@ function authenticateToken(req, res, next) {
 }
 
 // Start the server
-app.listen(3069, () => {
-  console.log("Server is running on port 3069");
+app.listen(8085, () => {
+  console.log("Server is running on port 8085");
 });

@@ -1,7 +1,7 @@
-GET http://localhost:3006/users
+GET http://localhost:8085/users
 
 ###
-POST http://localhost:3069/login HTTP/1.1
+POST http://localhost:8085/login HTTP/1.1
 content-type: application/json
 
 {
