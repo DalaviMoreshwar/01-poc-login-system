@@ -6,7 +6,8 @@ import Logout from "./../auth/Logout";
 
 const PrivateRoutes = () => {
   const loggedUser = isLoggedUser();
-  return loggedUser.isAuthenticated ? (
+  console.log(loggedUser);
+  return loggedUser?.isAuthenticated ? (
     <>
       <Navbar bg="light" expand="lg">
         <Container>
